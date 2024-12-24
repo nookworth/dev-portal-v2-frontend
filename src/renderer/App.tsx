@@ -1,15 +1,14 @@
-// import { clipboard } from 'electron';
 import './App.css';
-import React from 'react';
-
-const { useRef, useState } = React;
+import { useEffect, useRef, useState } from 'react';
+import { useFetchPRs } from '../hooks/useFetchPRs';
 
 const { sendMessage } = window.electron.ipcRenderer;
 
 function MainPage() {
-  const [showPRView, setShowPRView] = useState<boolean>(true);
   const [prInputValue, setPrInputValue] = useState<string>('');
   const generatedMessageEl = useRef<HTMLParagraphElement>(null);
+
+  const { fetchedPRs, error: fetchedPRsError } = useFetchPRs();
 
   const generateMessage = async () => {
     const generatedMessage = await window.electron.generateReviewMessage();
@@ -21,19 +20,6 @@ function MainPage() {
 
   return (
     <div className="bg-newForest flex flex-col gap-4 py-4 px-2 relative h-[100vh]">
-      <div className="flex flex-row justify-between items-center">
-        <button
-          className="bg-beachDark border-2 border-forest rounded-md p-1 uppercase hover:shadow-md"
-          onClick={(e) => {
-            e.preventDefault();
-            sendMessage('toggle-gh-windows', !showPRView);
-            setShowPRView(!showPRView);
-          }}
-          type="button"
-        >
-          Show/Hide GitHub
-        </button>
-      </div>
       <div className="flex flex-row gap-4 items-center">
         <form
           onSubmit={(e) => {
