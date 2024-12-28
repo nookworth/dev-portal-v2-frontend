@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useFetchPRs } from '../hooks/useFetchPRs';
 
 const { sendMessage } = window.electron.ipcRenderer;
@@ -8,7 +8,7 @@ function MainPage() {
   const [prInputValue, setPrInputValue] = useState<string>('');
   const generatedMessageEl = useRef<HTMLParagraphElement>(null);
 
-  const { fetchedPRs, error: fetchedPRsError } = useFetchPRs();
+  const { fetchedPRs, error } = useFetchPRs();
 
   const generateMessage = async () => {
     const generatedMessage = await window.electron.generateReviewMessage();
@@ -20,6 +20,7 @@ function MainPage() {
 
   return (
     <div className="bg-newForest flex flex-col gap-4 py-4 px-2 relative h-[100vh]">
+      <div>{JSON.stringify(fetchedPRs)}</div>
       <div className="flex flex-row gap-4 items-center">
         <form
           onSubmit={(e) => {
