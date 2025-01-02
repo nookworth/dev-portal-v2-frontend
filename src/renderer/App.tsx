@@ -20,7 +20,7 @@ function MainPage() {
 
   return (
     <div className="bg-newForest flex flex-col gap-4 py-4 px-2 relative h-[100vh]">
-      <div>{JSON.stringify(fetchedPRs)}</div>
+      <div className="text-body-1">{JSON.stringify(fetchedPRs)}</div>
       <div className="flex flex-row gap-4 items-center">
         <form
           onSubmit={(e) => {

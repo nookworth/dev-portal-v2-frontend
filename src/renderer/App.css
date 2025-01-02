@@ -6,3 +6,84 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
+
+@layer base {
+  .text-h1 {
+    @apply tracking-0 text-[40px] leading-[40px] lg:text-[100px] lg:leading-[100px] font-header-base;
+  }
+  .text-h2 {
+    @apply tracking-0 text-[34px] leading-[34px] lg:text-[68px] lg:leading-[68px] font-header-base;
+  }
+  .text-h3 {
+    @apply tracking-0 text-[28px] leading-[28px] lg:text-[48px] lg:leading-[48px] font-header-base;
+  }
+  .text-h4 {
+    @apply tracking-0 text-[24px] leading-[24px] lg:text-[36px] lg:leading-[38px] font-header-base;
+  }
+  .text-h5 {
+    @apply tracking-0 text-[21px] leading-[21px] lg:text-[32px] lg:leading-[34px] font-header-base;
+  }
+  .text-h6 {
+    @apply tracking-[0.15px] text-[18px] leading-[20px] lg:text-[22px] lg:leading-[24px] font-header-base;
+  }
+  .text-subtitle-1 {
+    @apply m-0 text-forest font-roboto font-semibold tracking-[0.15px] text-[14px] leading-[18px] lg:text-[16px] lg:leading-[22px];
+  }
+  .text-subtitle-2 {
+    @apply m-0 text-forest font-roboto font-bold tracking-0 text-[14px] leading-[15px] lg:text-[18px] lg:leading-[20px];
+  }
+  .text-body-1 {
+    @apply m-0 text-forest font-roboto font-normal tracking-0 text-[14px] leading-[18px] lg:text-[16px] lg:leading-[20px];
+  }
+  .text-body-2 {
+    @apply m-0 text-forest font-roboto font-normal tracking-0 text-[12px] leading-[16px] lg:text-[14px] lg:leading-[18px];
+  }
+  .text-input-text {
+    @apply m-0 text-forest font-roboto font-normal tracking-0 text-[14px] leading-[20px];
+  }
+  .text-link-desktop {
+    @apply m-0 text-forest font-roboto font-semibold tracking-0 text-[14px] leading-[14px];
+  }
+  .text-link-mobile {
+    @apply m-0 text-forest font-roboto font-semibold tracking-0 text-[12px] leading-[12px];
+  }
+  .text-link {
+    @apply text-link-mobile lg:text-link-desktop;
+  }
+  .text-button-small {
+    @apply m-0 text-forest font-roboto font-medium tracking-[1px] text-[14px] leading-[14px] uppercase;
+  }
+  .text-button-large {
+    @apply m-0 text-forest font-roboto font-medium tracking-[1px] text-[16px] leading-[20px] uppercase;
+  }
+  .text-price-text {
+    @apply m-0 text-black font-roboto font-semibold text-[18px] leading-[26px];
+  }
+  .text-strikethrough-price-text {
+    @apply m-0 text-black font-roboto font-normal text-[16px] leading-[26px];
+  }
+  .text-caption-1 {
+    @apply m-0 text-forest font-roboto font-medium tracking-[3.5px] text-[14px] leading-[14px];
+  }
+  .text-caption-2 {
+    @apply m-0 text-forest font-roboto font-semibold tracking-[3.5px] text-[12px] leading-[12px];
+  }
+  .text-overline {
+    @apply m-0 text-forest font-roboto font-medium tracking-[3.5px] text-[14px] leading-[14px];
+  }
+  .text-small-text {
+    @apply m-0 text-forest font-roboto font-normal tracking-0 text-[10px] leading-[12px] lg:text-[12px] lg:leading-[16px];
+  }
+  .text-snackbar {
+    @apply m-0 text-forest font-roboto font-semibold tracking-[0.15px] text-[14px] leading-[18px];
+  }
+  .shadow-1 {
+    @apply shadow-[0px_0px_20px_rgba(0,0,0,0.1)];
+  }
+  .shadow-2 {
+    @apply shadow-[0px_0px_20px_rgba(0,0,0,0.2)];
+  }
+  .shadow-3 {
+    @apply shadow-[0px_2px_12px_rgba(0,0,0,0.1)];
+  }
+}
