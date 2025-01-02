@@ -1,4 +1,4 @@
-const CONSTANTS = {
+const WINDOW_CONSTANTS = {
   childXOffset: 0,
   childHeight: 400,
   childWidth: 1024,
@@ -10,4 +10,9 @@ const CONSTANTS = {
   mainYOffset: 0,
 };
 
-export default CONSTANTS;
+const URL_CONSTANTS = {
+  owner: 'nookworth',
+  repo: 'tpg-dev-portal',
+};
+
+export { URL_CONSTANTS, WINDOW_CONSTANTS };
