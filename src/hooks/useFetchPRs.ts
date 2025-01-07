@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
+import { URL_CONSTANTS } from '../constants';
 
-const env = process.env.NODE_ENV;
-const url =
-  env === 'development'
-    ? 'http://localhost:3000'
-    : 'https://tpg-dev-portal-server.fly.dev';
+const { base: url } = URL_CONSTANTS;
 
 export const useFetchPRs = () => {
   const [fetchedPRs, setFetchedPRs] = useState<any[]>([]);

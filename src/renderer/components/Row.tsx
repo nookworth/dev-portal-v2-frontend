@@ -12,12 +12,21 @@ interface RowProps {
   title: string;
 }
 
-const { owner, repo } = URL_CONSTANTS;
+const { base, owner, repo, review } = URL_CONSTANTS;
+
+const onClick = async (body: string) => {
+  try {
+    await fetch(`${base}/${review}`, { body, method: 'POST' });
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 export function Row({ checkSuites, number, title }: RowProps) {
   const hasPendingChecks = checkSuites.some(
     (check) => check.status !== 'completed',
   );
+  const slackMessage = `"${title}" posted for review!`;
   const statusMessage = hasPendingChecks
     ? 'Pending checks'
     : 'All checks passed ✅';
@@ -30,6 +39,9 @@ export function Row({ checkSuites, number, title }: RowProps) {
         {number}
       </a>
       <div>{statusMessage}</div>
+      <button onClick={() => onClick(slackMessage)} type="button">
+        Post to Slack
+      </button>
     </div>
   );
 }
