@@ -5,9 +5,9 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 // import { autoUpdater } from 'electron-updater';
 // import log from 'electron-log';
 import { resolveHtmlPath } from './util';
-import CONSTANTS from '../constants';
+import { WINDOW_CONSTANTS } from '../constants';
 
-const { mainHeight, mainWidth, mainXOffset, mainYOffset } = CONSTANTS;
+const { mainHeight, mainWidth, mainXOffset, mainYOffset } = WINDOW_CONSTANTS;
 
 // class AppUpdater {
 //   constructor() {

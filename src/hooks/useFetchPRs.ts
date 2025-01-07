@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { URL_CONSTANTS } from '../constants';
+
+const { base: url } = URL_CONSTANTS;
 
 export const useFetchPRs = () => {
   const [fetchedPRs, setFetchedPRs] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://tpg-dev-portal-server.fly.dev')
+    fetch(url)
       .then((response) => {
         response
           .json()
